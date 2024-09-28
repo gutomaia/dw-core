@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "dw-core"
+version = "0.0.0"
+description = "Downwind Core"
+authors = ["Guto Maia <guto@guto.net>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.5.1"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "^1.7.8"
+blue = "^0.9.1"
+git-changelog = "^2.4.1"
+m2r = "^0.3.1"
+pytest = "^8.1.1"
+pytest-cov = "^5.0.0"
+pytest-watch = "^4.2.0"
+sphinx-autodoc-typehints = "^2.0.0"
+sphinx-multiversion = "^0.2.4"
+sphinx-rtd-theme = "^2.0.0"
+sphinxcontrib-plantuml = "^0.29"
+ghp-import = "^2.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."module"]
+"dw-core" = "dw_core"
