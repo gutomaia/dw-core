@@ -4,7 +4,6 @@ from dw_core.core import get_modules
 
 
 class EntrypointTest(TestCase):
-
     def test_len_modules(self):
         self.assertEqual(1, len(get_modules()))
 

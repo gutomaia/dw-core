@@ -11,11 +11,11 @@ class CQRSResponse(BaseModel):
     pass
 
 
-class Command(BaseModel):
+class Command(CQRSRequest):
     pass
 
 
-class Query(BaseModel):
+class Query(CQRSResponse):
     pass
 
 

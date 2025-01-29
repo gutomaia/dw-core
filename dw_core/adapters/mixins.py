@@ -1,7 +1,11 @@
 from typing import List
 
-from dw_core.ports import (TaskETACallback, TaskETAListenerInterface,
-                           TaskProgressCallback, TaskProgressListenerInterface)
+from dw_core.ports import (
+    TaskETACallback,
+    TaskETAListenerInterface,
+    TaskProgressCallback,
+    TaskProgressListenerInterface,
+)
 
 __all__ = ['TaskProgressListener', 'TaskETAListener']
 
