@@ -22,6 +22,7 @@ class TaskProgressCallback(metaclass=ABCMeta):
     Implement this interface to receive progress updates from a task.
     Progress is reported as a percentage between 0 and 100.
     """
+
     @abstractmethod
     def set_progress(self, percentage: float) -> None:
         """Update the progress of a task.
@@ -38,6 +39,7 @@ class TaskETACallback(metaclass=ABCMeta):
     Implement this interface to receive estimated time of arrival (ETA)
     updates from a task.
     """
+
     @abstractmethod
     def set_eta(self, seconds: float) -> None:
         """Update the estimated time remaining for a task.
@@ -54,6 +56,7 @@ class TaskProgressListenerInterface(metaclass=ABCMeta):
     This interface follows the Observer pattern, allowing multiple callbacks
     to be registered for progress updates.
     """
+
     @abstractmethod
     def add_progress_callback(self, callback: TaskProgressCallback):
         """Register a new progress callback.
@@ -88,6 +91,7 @@ class TaskETAListenerInterface(metaclass=ABCMeta):
     This interface follows the Observer pattern, allowing multiple callbacks
     to be registered for ETA updates.
     """
+
     @abstractmethod
     def add_eta_callback(self, callback: TaskETACallback):
         """Register a new ETA callback.
@@ -123,6 +127,7 @@ class BackgroundTask(metaclass=ABCMeta):
     Tasks can optionally implement TaskProgressListenerInterface and/or
     TaskETAListenerInterface to provide progress and ETA updates.
     """
+
     @abstractmethod
     def run(self):
         """Execute the task.
