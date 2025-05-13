@@ -11,7 +11,7 @@ from dw_core.cqrs import Command
 __all__ = ['CommandAccept', 'CommandExecuted']
 
 
-class CommandAccept(Command):   # status code 202
+class CommandAccept(Command):  # status code 202
     """Response indicating that a command has been accepted for processing.
 
     This response is typically used in asynchronous command processing scenarios
@@ -29,7 +29,7 @@ class CommandAccept(Command):   # status code 202
     )
 
 
-class CommandExecuted(Command):   # status code 200
+class CommandExecuted(Command):  # status code 200
     """Response indicating that a command has been successfully executed.
 
     This response is used when a command has been fully processed and completed.
