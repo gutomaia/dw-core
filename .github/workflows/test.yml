@@ -49,8 +49,8 @@ jobs:
     #     poetry run flake8 .
     #     poetry run bandit -r dw_core/
 
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4
-      with:
-        file: ./coverage.xml
-        fail_ci_if_error: true
+    # - name: Upload coverage reports to Codecov
+    #   uses: codecov/codecov-action@v4
+    #   with:
+    #     file: ./coverage.xml
+    #     fail_ci_if_error: true
