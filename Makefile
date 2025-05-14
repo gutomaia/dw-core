@@ -71,3 +71,6 @@ ${MAKEFILE_SCRIPT_PATH}/${MAKERY_SCRIPT}:
 
 run:
 	${VIRTUALENV} flask --app bootstrap_web.web --debug run
+
+site: ${REQUIREMENTS_TEST} docs
+	${VIRTUALENV} ghp-import -n -o -f -p $(HTML_PATH)
