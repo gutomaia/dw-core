@@ -34,6 +34,9 @@ jobs:
     #   run: poetry install --with dev
       
     - name: Build and Deploy Documentation
-      run: make site
+      run: |
+        make default
+        make build
+        make site
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
