@@ -5,6 +5,7 @@ PROJECT_TAG=dw-core
 GITHUB_DOMAIN=github.com
 GITHUB_TOKEN?=must be present on your env.mk, create in github at setting/user developer/external token with repo scope
 GITHUB_PROJECT=gutomaia/dw-core
+HTML_PATH=docs/_build/html
 MAKEFILE_SCRIPT_PATH=extras/makefiles
 MAKERY_REPOSITORY=gutomaia/gutonet-makery
 MAKERY_SCRIPT=gutonet.mk
