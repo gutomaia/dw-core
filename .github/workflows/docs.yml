@@ -37,7 +37,6 @@ jobs:
       run: |
         make extras/makefiles/gutonet.mk
         make extras/makefiles/python.mk
-        make build
         make site
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
