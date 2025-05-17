@@ -54,7 +54,6 @@ endif
 
 ifeq "" "${GITHUB_TOKEN}"
 default:
-	echo ${GUTO}
 	echo ${GITHUB_TOKEN} ${shell test -f ~/env.mk && echo true}
 	@echo "You must create a GITHUB_TOKEN var in your env.mk file"
 	@echo "Create a token with REPO permissions and set as GITHUB_TOKEN in your env.mk"
