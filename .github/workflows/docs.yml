@@ -35,6 +35,7 @@ jobs:
       
     - name: Build and Deploy Documentation
       run: |
+        pip install virtualenv
         make extras/makefiles/gutonet.mk
         make extras/makefiles/python.mk
         make site
