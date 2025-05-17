@@ -2,6 +2,7 @@ PLATFORM = $(shell uname)
 
 PROJECT_NAME=Downwind Core
 PROJECT_TAG=dw-core
+PUBLIC_PROJECT=true
 GITHUB_DOMAIN=github.com
 GITHUB_TOKEN?=must be present on your env.mk, create in github at setting/user developer/external token with repo scope
 GITHUB_PROJECT=gutomaia/dw-core
@@ -16,11 +17,19 @@ PYTHON_VERSION?=3.12
 PYTHON_MODULES=dw_core
 
 WGET=wget -q
+ifeq "true" "${PUBLIC_PROJECT}"
+GH_WGET=${WGET}
+else
 GH_WGET=${WGET} --header "Authorization: token ${GITHUB_TOKEN}"
+endif
 
 ifeq "" "$(shell which wget)"
 WGET=curl -O -s -L -s
+ifeq "true" "${PUBLIC_PROJECT}"
+GH_WGET=${WGET}
+else
 GH_WGET=${WGET} -H "Authorization: token ${GITHUB_TOKEN}"
+endif
 endif
 
 OK=\033[32m[OK]\033[39m
