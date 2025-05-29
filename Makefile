@@ -52,7 +52,9 @@ $(shell echo "# Generated file env.mk" > env.mk)
 $(shell echo "GITHUB_TOKEN=" > env.mk)
 endif
 
-ifeq "" "${GITHUB_TOKEN}"
+COND := $(and $(if $(GITHUB_TOKEN),,1),$(if $(filter false,$(PUBLIC_PROJECT)),1))
+
+ifeq ($(COND),1)
 default:
 	echo ${GITHUB_TOKEN} ${shell test -f ~/env.mk && echo true}
 	@echo "You must create a GITHUB_TOKEN var in your env.mk file"
