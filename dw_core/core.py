@@ -16,8 +16,16 @@ ENTRYPOINT_PORTS = 'ports'
 ENTRYPOINT_MODULE = 'module'
 """Entry point group name for module extensions."""
 
+ENTRYPOINT_ARGUMENT_RESOLVERS = 'argument_resolvers'
+"""Entry point group name for argument resolvers."""
 
-__all__ = ['get_domain', 'get_ports', 'get_modules']
+
+__all__ = [
+    'get_domain',
+    'get_ports',
+    'get_modules',
+    'get_argument_resolvers',
+]
 
 
 def get_entrypoints(name):
@@ -71,3 +79,32 @@ def get_modules():
         list[tuple]: A list of (name, module_extension) pairs.
     """
     return get_entrypoints(ENTRYPOINT_MODULE)
+
+
+def get_argument_resolvers():
+    """Retrieve all registered argument resolver entry points.
+
+    Argument resolvers are used by API adapters to inject dependencies into
+    handler functions based on type hints.
+
+    Returns:
+        list: A list of (name, resolver_instance) pairs.
+    """
+
+    loaded: list[tuple[str, object]] = []
+    for entrypoint in entry_points(group=ENTRYPOINT_ARGUMENT_RESOLVERS):
+        try:
+            obj = entrypoint.load()
+        except Exception:  # pragma: no cover
+            continue
+
+        try:
+            if isinstance(obj, type):
+                obj = obj()
+        except Exception:  # pragma: no cover
+            continue
+
+        loaded.append((entrypoint.name, obj))
+
+    loaded.sort(key=lambda x: x[0])
+    return loaded

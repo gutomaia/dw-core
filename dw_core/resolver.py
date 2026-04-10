@@ -37,7 +37,7 @@ class ResolverRegistry:
         func: Callable[..., Any],
         context: ResolutionContext,
     ) -> dict[str, Any]:
-        hints = get_type_hints(func)
+        hints = get_type_hints(func, include_extras=True)
         resolved: dict[str, Any] = {}
 
         for arg_name, arg_type in hints.items():
