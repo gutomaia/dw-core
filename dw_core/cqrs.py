@@ -7,7 +7,7 @@ of the system.
 
 from pydantic import BaseModel
 
-__all__ = ['Command', 'Query', 'Event']
+__all__ = ['Command', 'Query', 'QueryRequest', 'Event']
 
 
 class CQRSRequest(BaseModel):
@@ -17,6 +17,10 @@ class CQRSRequest(BaseModel):
     capabilities for all CQRS requests.
     """
 
+    pass
+
+
+class QueryRequest(CQRSRequest):
     pass
 
 
