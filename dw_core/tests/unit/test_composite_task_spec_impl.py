@@ -6,6 +6,11 @@ from dw_core.ports import TaskETACallback, TaskProgressCallback
 from dw_core.tests.composite_task_spec import CompositeTaskSpec
 
 
+import threading
+
+_MEETING = threading.Barrier(2, timeout=5.0)
+
+
 class _Child(Task):
     def __init__(self, label, behavior, clock):
         super().__init__()
@@ -14,6 +19,8 @@ class _Child(Task):
         self._clock = clock
 
     def run(self):
+        if self.behavior == 'rendezvous':
+            _MEETING.wait()
         if self.behavior == 'halfway-then-done':
             self.set_progress(50.0)
         self._clock.tick()
@@ -104,3 +111,20 @@ class CompositeTaskTest(CompositeTaskSpec, TestCase):
 
     def failure(self):
         return self.error
+
+    def when_run_pooled(self, workers):
+        from dw_core.adapters.composite import PoolRunner
+
+        def finalize():
+            self.finalizer_ran = True
+
+        composite = CompositeTask(
+            children=self.children,
+            finalizer=finalize,
+            clock=self.clock,
+        )
+        composite.add_progress_callback(self.recorder)
+        composite.add_eta_callback(self.recorder)
+        runner = PoolRunner(workers=workers)
+        composite.run(runner)
+        runner.wait()

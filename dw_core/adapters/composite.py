@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import threading
 import time
 from abc import ABCMeta, abstractmethod
+from concurrent.futures import ThreadPoolExecutor
 
 from dw_core.adapters.task import Task
 from dw_core.ports.tasks import (
@@ -30,6 +32,24 @@ class InThreadRunner(TaskRunner):
 
     def submit(self, task: BackgroundTask) -> None:
         task.run()
+
+
+class PoolRunner(TaskRunner):
+    """Carries tasks on a thread pool — real parallelism for work
+    like chunk renders, with the same seam. wait() drains the pool
+    for callers that need the end."""
+
+    def __init__(self, workers: int) -> None:
+        self._pool = ThreadPoolExecutor(max_workers=workers)
+        self._pending = []
+
+    def submit(self, task: BackgroundTask) -> None:
+        self._pending.append(self._pool.submit(task.run))
+
+    def wait(self) -> None:
+        for future in self._pending:
+            future.result()
+        self._pool.shutdown(wait=True)
 
 
 class _ChildRun(Task):
@@ -93,6 +113,7 @@ class CompositeTask(Task):
         }
         self._done_weight = 0.0
         self._failure: Exception | None = None
+        self._lock = threading.Lock()
 
     def run(self, runner: TaskRunner) -> None:
         self._started = self._clock()
@@ -108,23 +129,26 @@ class CompositeTask(Task):
 
     def _child_progress(self, child):
         def receive(percentage):
-            self._fractions[id(child)] = percentage / 100.0
-            self._report()
+            with self._lock:
+                self._fractions[id(child)] = percentage / 100.0
+                self._report()
         return receive
 
     def _child_done(self, child):
-        self._fractions[id(child)] = 1.0
-        self._done_weight += self._weights[id(child)]
-        self._report()
-        if self._done_weight >= self._total:
-            if self._finalizer is not None:
-                self._finalizer()
+        with self._lock:
+            self._fractions[id(child)] = 1.0
+            self._done_weight += self._weights[id(child)]
+            self._report()
+            finished = self._done_weight >= self._total
+        if finished and self._finalizer is not None:
+            self._finalizer()
 
     def _child_failed(self, child, failure):
         label = getattr(child, 'label', None) or repr(child)
-        self._failure = RuntimeError(
-            f'child {label} failed: {failure}'
-        )
+        with self._lock:
+            self._failure = RuntimeError(
+                f'child {label} failed: {failure}'
+            )
 
     def _report(self):
         if not self._total:

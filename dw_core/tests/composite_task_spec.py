@@ -105,3 +105,20 @@ class CompositeTaskSpec:
         self.when_run()
 
         assert 25.0 in self.reported_progress()
+
+    def when_run_pooled(self, workers: int):
+        raise NotImplementedError()
+
+    def test_a_pool_carries_children_concurrently(self):
+        """Two children that each wait for the other's arrival can
+        only BOTH finish if they truly run at the same time — a
+        serial runner would deadlock the first one (timeout-guarded
+        in the binding). The rollup arithmetic must survive the
+        threads."""
+        self.given_children([('left', 1, 'rendezvous'),
+                             ('right', 1, 'rendezvous')])
+
+        self.when_run_pooled(workers=2)
+
+        assert self.finalized() is True
+        assert self.reported_progress()[-1] == 100.0
