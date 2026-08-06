@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CQRS Module &mdash; Downwind Core 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7026087e"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dw_core.cqrs.CQRSRequest" href="generated/dw_core.cqrs.CQRSRequest.html" />
+    <link rel="prev" title="Core API Reference" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Downwind Core
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Core API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CQRS Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#class-overview">Class Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/dw_core.cqrs.CQRSRequest.html">dw_core.cqrs.CQRSRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/dw_core.cqrs.CQRSResponse.html">dw_core.cqrs.CQRSResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/dw_core.cqrs.Command.html">dw_core.cqrs.Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/dw_core.cqrs.Query.html">dw_core.cqrs.Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/dw_core.cqrs.Event.html">dw_core.cqrs.Event</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#detailed-documentation">Detailed Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base-request-response-classes">Base Request/Response Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cqrs-pattern-classes">CQRS Pattern Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="domain.html">Domain Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Core Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dependencies.html">Dependencies</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Downwind Core</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Core API Reference</a></li>
+      <li class="breadcrumb-item active">CQRS Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/core/cqrs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+
+  <section id="module-dw_core.cqrs">
+<span id="cqrs-module"></span><h1>CQRS Module<a class="headerlink" href="#module-dw_core.cqrs" title="Link to this heading"></a></h1>
+<p>This module provides the base classes for implementing CQRS pattern.</p>
+<section id="class-overview">
+<h2>Class Overview<a class="headerlink" href="#class-overview" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/dw_core.cqrs.CQRSRequest.html#dw_core.cqrs.CQRSRequest" title="dw_core.cqrs.CQRSRequest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CQRSRequest</span></code></a></p></td>
+<td><p>Base class for all CQRS requests.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/dw_core.cqrs.CQRSResponse.html#dw_core.cqrs.CQRSResponse" title="dw_core.cqrs.CQRSResponse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CQRSResponse</span></code></a></p></td>
+<td><p>Base class for all CQRS responses.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/dw_core.cqrs.Command.html#dw_core.cqrs.Command" title="dw_core.cqrs.Command"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Command</span></code></a></p></td>
+<td><p>Base class for command requests in CQRS pattern.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/dw_core.cqrs.Query.html#dw_core.cqrs.Query" title="dw_core.cqrs.Query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Query</span></code></a></p></td>
+<td><p>Base class for query responses in CQRS pattern.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/dw_core.cqrs.Event.html#dw_core.cqrs.Event" title="dw_core.cqrs.Event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Event</span></code></a></p></td>
+<td><p>Base class for domain events in CQRS pattern.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="detailed-documentation">
+<h2>Detailed Documentation<a class="headerlink" href="#detailed-documentation" title="Link to this heading"></a></h2>
+<section id="base-request-response-classes">
+<h3>Base Request/Response Classes<a class="headerlink" href="#base-request-response-classes" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dw_core.cqrs.CQRSRequest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dw_core.cqrs.</span></span><span class="sig-name descname"><span class="pre">CQRSRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dw_core/cqrs.html#CQRSRequest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dw_core.cqrs.CQRSRequest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/#pydantic.BaseModel" title="(in Pydantic v0.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>Base class for all CQRS requests.</p>
+<p>This class extends Pydantic’s BaseModel to provide validation and serialization
+capabilities for all CQRS requests.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dw_core.cqrs.CQRSRequest.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[ConfigDict]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#dw_core.cqrs.CQRSRequest.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dw_core.cqrs.CQRSResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dw_core.cqrs.</span></span><span class="sig-name descname"><span class="pre">CQRSResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dw_core/cqrs.html#CQRSResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dw_core.cqrs.CQRSResponse" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/#pydantic.BaseModel" title="(in Pydantic v0.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>Base class for all CQRS responses.</p>
+<p>This class extends Pydantic’s BaseModel to provide validation and serialization
+capabilities for all CQRS responses.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dw_core.cqrs.CQRSResponse.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[ConfigDict]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#dw_core.cqrs.CQRSResponse.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="cqrs-pattern-classes">
+<h3>CQRS Pattern Classes<a class="headerlink" href="#cqrs-pattern-classes" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dw_core.cqrs.Command">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dw_core.cqrs.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dw_core/cqrs.html#Command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dw_core.cqrs.Command" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="generated/dw_core.cqrs.CQRSRequest.html#dw_core.cqrs.CQRSRequest" title="dw_core.cqrs.CQRSRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">CQRSRequest</span></code></a></p>
+<p>Base class for command requests in CQRS pattern.</p>
+<p>Commands represent intentions to change the system state. They are named with
+imperative verbs and should be processed exactly once. Examples include:
+CreateUser, UpdateProfile, DeleteAccount.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dw_core.cqrs.Command.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[ConfigDict]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#dw_core.cqrs.Command.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dw_core.cqrs.Query">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dw_core.cqrs.</span></span><span class="sig-name descname"><span class="pre">Query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dw_core/cqrs.html#Query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dw_core.cqrs.Query" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="generated/dw_core.cqrs.CQRSResponse.html#dw_core.cqrs.CQRSResponse" title="dw_core.cqrs.CQRSResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">CQRSResponse</span></code></a></p>
+<p>Base class for query responses in CQRS pattern.</p>
+<p>Queries represent requests for information that do not modify system state.
+They can be executed multiple times without side effects. Examples include:
+GetUserProfile, ListOrders, SearchProducts.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dw_core.cqrs.Query.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[ConfigDict]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#dw_core.cqrs.Query.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dw_core.cqrs.Event">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dw_core.cqrs.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dw_core/cqrs.html#Event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dw_core.cqrs.Event" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/#pydantic.BaseModel" title="(in Pydantic v0.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>Base class for domain events in CQRS pattern.</p>
+<p>Events represent facts that have occurred in the system. They are named in
+past tense and are immutable. Examples include: UserCreated, OrderPlaced,
+EmailSent.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dw_core.cqrs.Event.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[ConfigDict]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#dw_core.cqrs.Event.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Core API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="generated/dw_core.cqrs.CQRSRequest.html" class="btn btn-neutral float-right" title="dw_core.cqrs.CQRSRequest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Guto Maia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 0.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="cqrs.html">0.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿dw\_core.domain.CommandAccept
+=============================
+
+.. currentmodule:: dw_core.domain
+
+.. autoclass:: CommandAccept
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CommandAccept.__init__
+      ~CommandAccept.construct
+      ~CommandAccept.copy
+      ~CommandAccept.dict
+      ~CommandAccept.from_orm
+      ~CommandAccept.json
+      ~CommandAccept.model_construct
+      ~CommandAccept.model_copy
+      ~CommandAccept.model_dump
+      ~CommandAccept.model_dump_json
+      ~CommandAccept.model_json_schema
+      ~CommandAccept.model_parametrized_name
+      ~CommandAccept.model_post_init
+      ~CommandAccept.model_rebuild
+      ~CommandAccept.model_validate
+      ~CommandAccept.model_validate_json
+      ~CommandAccept.model_validate_strings
+      ~CommandAccept.parse_file
+      ~CommandAccept.parse_obj
+      ~CommandAccept.parse_raw
+      ~CommandAccept.schema
+      ~CommandAccept.schema_json
+      ~CommandAccept.update_forward_refs
+      ~CommandAccept.validate
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CommandAccept.model_computed_fields
+      ~CommandAccept.model_config
+      ~CommandAccept.model_extra
+      ~CommandAccept.model_fields
+      ~CommandAccept.model_fields_set
+      ~CommandAccept.accepted
+   
+   

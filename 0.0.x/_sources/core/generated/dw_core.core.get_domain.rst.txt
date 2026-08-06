@@ -1,0 +1,6 @@
+﻿dw\_core.core.get\_domain
+=========================
+
+.. currentmodule:: dw_core.core
+
+.. autofunction:: get_domain

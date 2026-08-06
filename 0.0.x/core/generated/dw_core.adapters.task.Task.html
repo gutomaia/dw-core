@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dw_core.adapters.task.Task &mdash; Downwind Core 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=7026087e"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../../changelog.html" />
+    <link rel="prev" title="dw_core.adapters.mixins.TaskETAListener" href="dw_core.adapters.mixins.TaskETAListener.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Downwind Core
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Core API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cqrs.html">CQRS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain.html">Domain Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Core Module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../tasks.html">Tasks Module</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../tasks.html#interface-overview">Interface Overview</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../tasks.html#implementation-overview">Implementation Overview</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dw_core.adapters.mixins.TaskProgressListener.html">dw_core.adapters.mixins.TaskProgressListener</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dw_core.adapters.mixins.TaskETAListener.html">dw_core.adapters.mixins.TaskETAListener</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">dw_core.adapters.task.Task</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tasks.html#detailed-documentation">Detailed Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dependencies.html">Dependencies</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Downwind Core</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Core API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../tasks.html">Tasks Module</a></li>
+      <li class="breadcrumb-item active">dw_core.adapters.task.Task</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/core/generated/dw_core.adapters.task.Task.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+
+  <section id="dw-core-adapters-task-task">
+<h1>dw_core.adapters.task.Task<a class="headerlink" href="#dw-core-adapters-task-task" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="dw_core.adapters.task.Task">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dw_core.adapters.task.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><a class="reference internal" href="../../_modules/dw_core/adapters/task.html#Task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dw_core.adapters.task.Task" title="Link to this definition"></a></dt>
+<dd><p>Base class for background tasks with progress and ETA tracking.</p>
+<p>This class combines the BackgroundTask interface with progress and ETA
+tracking capabilities. Subclasses should implement the run() method
+and use set_progress() and set_eta() to provide updates during execution.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyTask</span><span class="p">(</span><span class="n">Task</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_progress</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_eta</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="c1"># do work</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_progress</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_eta</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="c1"># do more work</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_progress</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">set_eta</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="dw_core.adapters.task.Task.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/dw_core/adapters/task.html#Task.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dw_core.adapters.task.Task.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the task with progress and ETA tracking capabilities.</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../tasks.html#dw_core.adapters.task.Task.__init__" title="dw_core.adapters.task.Task.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<td><p>Initialize the task with progress and ETA tracking capabilities.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_eta_callback</span></code>(callback)</p></td>
+<td><p>Register a new ETA callback.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_progress_callback</span></code>(callback)</p></td>
+<td><p>Register a new progress callback.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_eta_callback</span></code>(callback)</p></td>
+<td><p>Unregister an ETA callback.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_progress_callback</span></code>(callback)</p></td>
+<td><p>Unregister a progress callback.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code>()</p></td>
+<td><p>Execute the task.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_eta</span></code>(eta)</p></td>
+<td><p>Update ETA and notify all registered callbacks.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_progress</span></code>(percentage)</p></td>
+<td><p>Update progress and notify all registered callbacks.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dw_core.adapters.mixins.TaskETAListener.html" class="btn btn-neutral float-left" title="dw_core.adapters.mixins.TaskETAListener" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../changelog.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Guto Maia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: 0.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="dw_core.adapters.task.Task.html">0.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

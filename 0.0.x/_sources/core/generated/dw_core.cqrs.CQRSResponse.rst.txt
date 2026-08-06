@@ -1,0 +1,55 @@
+﻿dw\_core.cqrs.CQRSResponse
+==========================
+
+.. currentmodule:: dw_core.cqrs
+
+.. autoclass:: CQRSResponse
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CQRSResponse.__init__
+      ~CQRSResponse.construct
+      ~CQRSResponse.copy
+      ~CQRSResponse.dict
+      ~CQRSResponse.from_orm
+      ~CQRSResponse.json
+      ~CQRSResponse.model_construct
+      ~CQRSResponse.model_copy
+      ~CQRSResponse.model_dump
+      ~CQRSResponse.model_dump_json
+      ~CQRSResponse.model_json_schema
+      ~CQRSResponse.model_parametrized_name
+      ~CQRSResponse.model_post_init
+      ~CQRSResponse.model_rebuild
+      ~CQRSResponse.model_validate
+      ~CQRSResponse.model_validate_json
+      ~CQRSResponse.model_validate_strings
+      ~CQRSResponse.parse_file
+      ~CQRSResponse.parse_obj
+      ~CQRSResponse.parse_raw
+      ~CQRSResponse.schema
+      ~CQRSResponse.schema_json
+      ~CQRSResponse.update_forward_refs
+      ~CQRSResponse.validate
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CQRSResponse.model_computed_fields
+      ~CQRSResponse.model_config
+      ~CQRSResponse.model_extra
+      ~CQRSResponse.model_fields
+      ~CQRSResponse.model_fields_set
+   
+   

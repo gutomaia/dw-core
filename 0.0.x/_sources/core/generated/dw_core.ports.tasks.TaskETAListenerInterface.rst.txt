@@ -1,0 +1,25 @@
+﻿dw\_core.ports.tasks.TaskETAListenerInterface
+=============================================
+
+.. currentmodule:: dw_core.ports.tasks
+
+.. autoclass:: TaskETAListenerInterface
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TaskETAListenerInterface.__init__
+      ~TaskETAListenerInterface.add_eta_callback
+      ~TaskETAListenerInterface.remove_eta_callback
+      ~TaskETAListenerInterface.set_eta
+   
+   
+
+   
+   
+   

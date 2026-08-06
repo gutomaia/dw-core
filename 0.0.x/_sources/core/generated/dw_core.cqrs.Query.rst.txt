@@ -1,0 +1,55 @@
+﻿dw\_core.cqrs.Query
+===================
+
+.. currentmodule:: dw_core.cqrs
+
+.. autoclass:: Query
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Query.__init__
+      ~Query.construct
+      ~Query.copy
+      ~Query.dict
+      ~Query.from_orm
+      ~Query.json
+      ~Query.model_construct
+      ~Query.model_copy
+      ~Query.model_dump
+      ~Query.model_dump_json
+      ~Query.model_json_schema
+      ~Query.model_parametrized_name
+      ~Query.model_post_init
+      ~Query.model_rebuild
+      ~Query.model_validate
+      ~Query.model_validate_json
+      ~Query.model_validate_strings
+      ~Query.parse_file
+      ~Query.parse_obj
+      ~Query.parse_raw
+      ~Query.schema
+      ~Query.schema_json
+      ~Query.update_forward_refs
+      ~Query.validate
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Query.model_computed_fields
+      ~Query.model_config
+      ~Query.model_extra
+      ~Query.model_fields
+      ~Query.model_fields_set
+   
+   

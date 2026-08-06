@@ -1,0 +1,25 @@
+﻿dw\_core.adapters.mixins.TaskProgressListener
+=============================================
+
+.. currentmodule:: dw_core.adapters.mixins
+
+.. autoclass:: TaskProgressListener
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TaskProgressListener.__init__
+      ~TaskProgressListener.add_progress_callback
+      ~TaskProgressListener.remove_progress_callback
+      ~TaskProgressListener.set_progress
+   
+   
+
+   
+   
+   

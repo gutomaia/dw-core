@@ -1,0 +1,55 @@
+﻿dw\_core.cqrs.Command
+=====================
+
+.. currentmodule:: dw_core.cqrs
+
+.. autoclass:: Command
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Command.__init__
+      ~Command.construct
+      ~Command.copy
+      ~Command.dict
+      ~Command.from_orm
+      ~Command.json
+      ~Command.model_construct
+      ~Command.model_copy
+      ~Command.model_dump
+      ~Command.model_dump_json
+      ~Command.model_json_schema
+      ~Command.model_parametrized_name
+      ~Command.model_post_init
+      ~Command.model_rebuild
+      ~Command.model_validate
+      ~Command.model_validate_json
+      ~Command.model_validate_strings
+      ~Command.parse_file
+      ~Command.parse_obj
+      ~Command.parse_raw
+      ~Command.schema
+      ~Command.schema_json
+      ~Command.update_forward_refs
+      ~Command.validate
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Command.model_computed_fields
+      ~Command.model_config
+      ~Command.model_extra
+      ~Command.model_fields
+      ~Command.model_fields_set
+   
+   

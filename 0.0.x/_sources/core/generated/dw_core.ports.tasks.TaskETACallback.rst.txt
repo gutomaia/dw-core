@@ -1,0 +1,23 @@
+﻿dw\_core.ports.tasks.TaskETACallback
+====================================
+
+.. currentmodule:: dw_core.ports.tasks
+
+.. autoclass:: TaskETACallback
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TaskETACallback.__init__
+      ~TaskETACallback.set_eta
+   
+   
+
+   
+   
+   

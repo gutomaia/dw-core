@@ -1,0 +1,55 @@
+﻿dw\_core.cqrs.Event
+===================
+
+.. currentmodule:: dw_core.cqrs
+
+.. autoclass:: Event
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Event.__init__
+      ~Event.construct
+      ~Event.copy
+      ~Event.dict
+      ~Event.from_orm
+      ~Event.json
+      ~Event.model_construct
+      ~Event.model_copy
+      ~Event.model_dump
+      ~Event.model_dump_json
+      ~Event.model_json_schema
+      ~Event.model_parametrized_name
+      ~Event.model_post_init
+      ~Event.model_rebuild
+      ~Event.model_validate
+      ~Event.model_validate_json
+      ~Event.model_validate_strings
+      ~Event.parse_file
+      ~Event.parse_obj
+      ~Event.parse_raw
+      ~Event.schema
+      ~Event.schema_json
+      ~Event.update_forward_refs
+      ~Event.validate
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Event.model_computed_fields
+      ~Event.model_config
+      ~Event.model_extra
+      ~Event.model_fields
+      ~Event.model_fields_set
+   
+   

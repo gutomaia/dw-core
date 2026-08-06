@@ -1,0 +1,25 @@
+﻿dw\_core.adapters.mixins.TaskETAListener
+========================================
+
+.. currentmodule:: dw_core.adapters.mixins
+
+.. autoclass:: TaskETAListener
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TaskETAListener.__init__
+      ~TaskETAListener.add_eta_callback
+      ~TaskETAListener.remove_eta_callback
+      ~TaskETAListener.set_eta
+   
+   
+
+   
+   
+   

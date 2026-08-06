@@ -1,0 +1,6 @@
+﻿dw\_core.core.get\_ports
+========================
+
+.. currentmodule:: dw_core.core
+
+.. autofunction:: get_ports

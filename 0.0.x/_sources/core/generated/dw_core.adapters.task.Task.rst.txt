@@ -1,0 +1,29 @@
+﻿dw\_core.adapters.task.Task
+===========================
+
+.. currentmodule:: dw_core.adapters.task
+
+.. autoclass:: Task
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Task.__init__
+      ~Task.add_eta_callback
+      ~Task.add_progress_callback
+      ~Task.remove_eta_callback
+      ~Task.remove_progress_callback
+      ~Task.run
+      ~Task.set_eta
+      ~Task.set_progress
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+﻿dw\_core.core.get\_modules
+==========================
+
+.. currentmodule:: dw_core.core
+
+.. autofunction:: get_modules
